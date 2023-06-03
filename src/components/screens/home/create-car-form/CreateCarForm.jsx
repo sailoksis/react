@@ -23,7 +23,7 @@ const CreateCarForm = () => {
          onChange ={e => setImage(e.target.value)} 
          value={image}  />
 
-        <button onClick={e => createCar(e)}>Create</button>
+        <button className='btn' onClick={e => createCar(e)}>Create</button>
     </form>
 }
 

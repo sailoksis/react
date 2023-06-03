@@ -6,7 +6,6 @@ import CreateCarForm from "./create-car-form/CreateCarForm";
 
 function Home() {
 
-
   return (
 <div> 
     <h1>Cars catalog</h1>
