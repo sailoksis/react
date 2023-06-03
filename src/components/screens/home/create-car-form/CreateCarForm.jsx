@@ -1,12 +1,29 @@
+import { useState } from 'react'
 import styles from './CreateCarForm.module.css'
 
 const CreateCarForm = () => {
-    return <form className={styles.form}>
-        <input placeholder="Name" />
-        <input placeholder="Price" />
-        <input placeholder="Image" />
+    const [name, setName] = useState('')
+    const [price, setPrice] = useState('')
+    const [image, setImage] = useState('')
 
-        <button>Create</button>
+    const createCar = (e) => {
+        e.preventDefault()
+       console.log(name, price,image) 
+    }
+    return <form className={styles.form}>
+        <input 
+        placeholder="Name" 
+        onChange ={e => setName(e.target.value)} 
+        value={name} 
+        />
+        <input placeholder="Price" 
+         onChange ={e => setPrice(e.target.value)} 
+         value={price} />
+        <input placeholder="Image"
+         onChange ={e => setImage(e.target.value)} 
+         value={image}  />
+
+        <button onClick={e => createCar(e)}>Create</button>
     </form>
 }
 
