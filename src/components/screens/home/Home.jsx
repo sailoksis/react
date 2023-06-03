@@ -1,17 +1,19 @@
 import React from "react";
 import styles from './Home.module.css'
+import {cars} from './cars.data.js'
+import CarItem from "./car-item/CarItem";
 
 function Home() {
   return (
-
-<div className={styles.item}> 
+<div> 
     <h1>Cars catalog</h1>
     <div>
-<div>
-    <h2>Car 1</h2>
-    <p>$100</p>
-    <button>Read more</button>
-</div>
+      {cars.length ? (
+        cars.map(car => <CarItem key= {car.id} car=
+          {car}/>)
+      ) : (
+      <p>There are no cars</p>
+    )}
     </div>
     </div>
   );
